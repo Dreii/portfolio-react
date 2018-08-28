@@ -1,0 +1,49 @@
+.navigation{
+  text-align: center;
+}
+
+.navigation ul{
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li{
+  display: inline-block;
+  margin-top: 64px;
+  padding: 0 4px 0 4px;
+  border-bottom: 1px solid #e6e6e6;
+
+  transition: all 0.3s ease-out;
+}
+
+.navigation li button{
+  color: #8d8d8d;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+
+  padding: 4px;
+  transition: all 0.6s ease-out;
+}
+
+.navigation li.active{
+  border-color: #e73a41;
+  position: relative;
+}
+
+.navigation li.active::after{
+  content: '';
+  position: absolute;
+  bottom:-1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  box-shadow: 0 0 1px rgba(231,106,111, 1);
+}
+
+.navigation li.active button{
+  color: #e73a41;
+  text-shadow: 0 0 1px rgba(231,106,111, 0.5);
+}
