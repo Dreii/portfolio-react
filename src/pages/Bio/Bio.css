@@ -1,0 +1,52 @@
+.bio.page{
+  min-height: 100vh;
+}
+
+.bio.page .background{
+  background-position: bottom;
+}
+
+.bio.page .body{
+  text-align: center;
+  padding-top: 25vh;
+  min-height: 100vh;
+}
+
+.bio-title{
+  font-family: "Oleo Script", serif;
+  color: #D1EEFF;
+  font-size: 52px;
+  font-weight: lighter;
+  margin-top: 128px;
+  opacity: 0;
+  animation: fade-in 0.6s ease-in forwards 2s;
+}
+
+.bio-text{
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  margin-top: 128px;
+  opacity: 0;
+  animation: fade-in 0.8s ease-in forwards 2s;
+}
+
+@keyframes fade-in{
+  100%{margin-top: 0; opacity: 1;}
+}
+
+.bio-container{
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.skills-container{
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  margin-top: 128px;
+
+  justify-content: space-between;
+  padding: 0 20%;
+}

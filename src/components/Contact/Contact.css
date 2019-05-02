@@ -1,0 +1,52 @@
+.contact{
+  text-align: center;
+  margin: 32px auto 64px auto;
+}
+
+.contact-icon{fill: white;}
+
+.contact h1{
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.email-link, .email-link:visited{
+  text-decoration: none;
+  color: white;
+}
+
+.work-page .email-link:hover{color: #C62B2B;}
+.bio-page .email-link:hover{color: #166190;}
+
+.contact ul{list-style: none;}
+
+.contact svg{
+  width: 32px;
+  height: 32px;
+}
+
+.work-page .contact a:hover .contact-icon{fill: #C62B2B;}
+.bio-page .contact a:hover .contact-icon{fill: #166190;}
+
+.email-link, .contact-icon{transition: fill 0.1s ease-out, color 0.1s ease-out, transform 0.1s ease-out;}
+
+.contact li{
+  display: inline-block;
+  position: relative;
+  margin-right: 32px;
+}
+.contact li:after{
+  content: '';
+  position: absolute;
+  border-radius: 32px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  top: 12px;
+  right: -18px;
+}
+.contact li:last-of-type:after{
+  display: none;
+}

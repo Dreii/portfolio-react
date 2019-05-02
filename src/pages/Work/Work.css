@@ -1,18 +1,17 @@
-.work{
-  margin-top: 56px;
-
-  transform: translateX(-256px);
-  opacity: 0;
-
-  transition: all 0.3s ease-out;
+.work.page .background{
+  /* background-size: cover; */
 }
 
-.work.work-enter-done{
-  transform: translateX(0);
-  opacity: 1;
+.work-list{
+  flex: 0 0 100%;
+  overflow-y: scroll;
+  height: 100%;
+  padding-top: 100%;
+  animation: work-list-slide-in 800ms ease-out 2000ms;
+  animation-fill-mode: forwards;
 }
 
-.work.work-exit-done{
-  transform: translateX(-256px);
-  opacity: 0;
+
+@keyframes work-list-slide-in{
+  100%{padding-top: 0;}
 }

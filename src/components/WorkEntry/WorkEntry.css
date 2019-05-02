@@ -1,106 +1,98 @@
-.WorkEntry{
-  position: relative;
+.work-entry-container:first-of-type{margin-top: 112px;}
+
+.work-entry-container{
   width: 100%;
-  max-width: 512px;
-  margin: 28px auto;
-
-  background: white;
-  padding: 6px;
-  border-radius: 6px;
-  border-bottom: 3px solid #e6e6e6;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.31);
-
-  transition: all 0.3s ease-out;
+  padding: 0 10%;
+  box-sizing: border-box;
 }
 
-.WorkEntry .image{
+.work-entry .image-container, .work-entry .text-container{
+  border: 3px solid #FF7373;
+  border-radius: 16px;
+  background-size: cover;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  text-align: center;
+  width: 70%;
+  padding-bottom: 70%;
   position: relative;
-  height: 56px;
-  border-radius: 6px;
-  background-position: middle center;
-
-  transition: all 0.3s ease-out;
+  height: 0;
 }
 
-.WorkEntry .image .overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
+.image{
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 14px;
+}
+
+.work-entry .work-title{
+  font-family: 'Oleo Script', serif;
+  color: #FF7373;
+  text-align: left;
+}
+.work-entry .tag-container{
+  font-family: 'Oleo Script', serif;
+  font-size: 10px;
+  color: #333333;
+  text-align: left;
+}
+.work-entry .text-container{
+  position: relative;
+  top: -96px;
+
+  width: 50%;
+  height: 150px;
   background: white;
-  z-index: 0;
-  opacity: 0.3;
+  border-radius: 16px;
+  clear: both;
+  padding: 8px;
 
-  transition: all 0.3s ease-out;
+  font-size: 12px;
+  color: #8D8D8D;
 }
 
-.WorkEntry h3{
-  position: absolute;
-  top: 18px;
-  left: 28px;
-  font-size: 24px;
-  margin: 0;
-  color: #333;
-
-  transition: all 0.3s ease-out;
-}
-
-.WorkEntry .toggleOpen{
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  padding: 12px 15px;
-  color: white;
-  border: none;
-  background: #e97c80;
-
-  transition: all 0.3s ease-out;
-}
-
-.WorkEntry .toggleOpen i{
-  margin: 0;
-  padding: 0;
-}
-
-.WorkEntry .message{
+.work-entry .work-text{
+  max-height: 56px;
   overflow-y: hidden;
-  height: 0px;
-  padding: 0 20px;
-  margin: 0;
-
-  transition: all 0.3s ease-out;
+  margin-top: 8px;
 }
 
-.WorkEntry .message p{
-  font-size: 14px;
-  color: #595959;
+.work-entry .work-button{
+  font-size: 12px;
+  border: 1px solid #FF7373;
+  padding: 2px 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FF7373;
+  border-radius: 32px;
+  margin: 4px auto;
 }
 
-/* OPEN STATE */
+.work-entry-container:nth-of-type(odd) .image-container{margin-left: 0; margin-right: 20%;}
+.work-entry-container:nth-of-type(odd) .text-container{margin-left: 40%; margin-right: 0;}
 
-.WorkEntry.open{
-  padding-bottom: 20px;
-}
+.work-entry-container:nth-of-type(even) .image-container{margin-left: 20%; margin-right: 0;}
+.work-entry-container:nth-of-type(even) .text-container{margin-left: 0; margin-right: 40%;}
 
-.WorkEntry.open .image{
-  height: 250px;
-}
 
-.WorkEntry.open .image .overlay{
-  opacity: 0;
-}
+@media only screen and (min-width: 768px){
+  .work-entry .image-container{
+    width: 80%;
+    padding-bottom: 80%;
+  }
 
-.WorkEntry.open h3{
-  top: 272px;
-  color: #333;
-}
+  .work-entry .text-container{
+    width: 70%;
+    height: 150px;
+  }
 
-.WorkEntry.open .message{
-  height: 152px;
-  padding-top: 42px;
-}
+  .work-entry-container{
+    padding: 0 30%;
+  }
 
-.WorkEntry.open .toggleOpen{
-  transform: rotateZ(180deg);
+  .work-entry .work-text{
+    max-height: 56px;
+  }
 }

@@ -1,0 +1,27 @@
+.transition-container{
+  /* -webkit-filter: url("#goo"); */
+          /* filter: url("#goo"); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob{
+  position: fixed;
+  background: #E65151;
+  /* width: 100px; */
+  /* height: 100px; */
+  line-height: 100px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  border-radius: 100%;
+  transform-origin: center;
+  margin-left: -50%;
+  margin-top: -50%;
+}

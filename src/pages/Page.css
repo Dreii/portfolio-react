@@ -1,0 +1,87 @@
+.page{
+  width: 100%;
+  /* height: 100%; */
+  opacity: 1;
+  left: 0;
+}
+
+.page .inner{
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  opacity: 1
+}
+
+.page .background{
+  opacity: 0;
+  background-position: top;
+  animation: fade-in 1000ms ease-in 1000ms;
+  animation-fill-mode: forwards;
+  position: fixed;
+  width: 100%;
+}
+@keyframes fade-in{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+.page:hover .background{opacity: auto;}
+
+
+.header{
+  position:absolute;
+  top: 32px;
+  right: 32px;
+  width: 200px;
+  white-space: nowrap;
+  text-align: right;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: white;
+  transform-origin: right;
+  transform: scaleX(0);
+  animation: header-slide-in 500ms linear 1300ms;
+  animation-fill-mode: forwards;
+}
+
+.header:before{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0px;
+  height: 100%;
+  background: white;
+  animation: header-slide-in-out 1000ms linear 1000ms;
+}
+
+.header h1{
+  overflow: hidden;
+}
+
+.header h1:after{
+  content:'';
+  position: absolute;
+  bottom: -6px;
+  width: 48px;
+  transform: scaleX(0);
+  height: 3px;
+  background: white;
+  right:0;
+  transform-origin: right;
+  animation: header-slide-in 500ms linear 1800ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes header-slide-in{
+  0%{transform: scaleX(0);}
+  100%{transform: scaleX(1);}
+}
+
+@keyframes header-slide-in-out{
+  0%{  width:0px;   right: 0;    left: auto;}
+  45%{ width:200px; right:0;     left: auto;}
+  55%{ width:200px; right: auto; left:0;}
+  99%{ width:0px;   right: auto; left: 0;}
+  100%{width:0px;   right: 0;    left: auto;}
+}

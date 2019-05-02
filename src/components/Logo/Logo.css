@@ -1,0 +1,37 @@
+#logo-container{
+  position: absolute;
+  animation: swirl 800ms cubic-bezier(0.68, 0.68, 0.265, 1.55) 500ms;
+  animation-fill-mode: forwards;
+  transition: top 0.6s ease-in, left 0.6s ease-in;
+  z-index: 100;
+}
+
+#logo-inner-container{
+  position: absolute;
+  height: 64px;
+  width: 64px;
+}
+
+#logo{
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  margin-left: -50%;
+  margin-top: -50%;
+}
+
+#logo:hover{
+  animation: hover 800ms cubic-bezier(0.68, 0.68, 0.265, 1.55);
+}
+
+@keyframes swirl{
+  0% {transform: rotate(-360deg) scale(0);}
+  100% {transform: rotate(0) scale(1);}
+}
+
+@keyframes hover{
+  0%{transform: rotate(0) scale(1)}
+  25%{transform: rotate(-8deg) scale(1.05);}
+  50%{transform: rotate(8deg) scale(1.1);}
+  100%{transform: rotate(0) scale(1)}
+}

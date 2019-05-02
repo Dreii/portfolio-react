@@ -1,21 +1,33 @@
-import React from 'react';
+import React from 'react'
 import './Work.css'
+import '../Page.css'
 
+import Button from '../../components/Button/Button'
+import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import WorkEntry from '../../components/WorkEntry/WorkEntry'
-import locations from '../../constants/locations'
+import Contact from '../../components/Contact/Contact'
 
-import {CSSTransition} from 'react-transition-group'
+import Projects from '../../functions/RandomWorkGenerator'
 
-import projects from '../../functions/RandomWorkGenerator'
+import Bio from '../Bio/Bio'
 
-const Work = ({location}) => (
-  <CSSTransition classNames="work" in={location === locations.WORK} appear={true} timeout={{enter:0, exit:300}} unmountOnExit={true}>
-    <div className="work">
-      {projects.map((project, i)=>(
-        <WorkEntry name={project.name} image={project.image} message={project.message} key={i} />
-      ))}
+
+const Work = ({ChangePage, EnterFullScreen}) => (
+  <div className="work page">
+    <div className="inner">
+      <div className="header">
+        <h1>My Work</h1>
+      </div>
+      <div className="work-list">
+        {Projects.map((project, i)=>(
+          <WorkEntry name={project.name} image={project.image} message={project.message} tags={project.tags} key={i} />
+        ))}
+        <Contact />
+      </div>
+      <Button value="View My Skills" color="white" style={{position: "fixed", bottom: 16, right: 16}} onClick={()=>ChangePage(<Bio ChangePage={ChangePage} EnterFullScreen={EnterFullScreen}/>, "#2A9BE2")}/>
     </div>
-  </CSSTransition>
+    <div className="background"></div>
+  </div>
 )
 
-export default Work;
+export default Work

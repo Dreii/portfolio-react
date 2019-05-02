@@ -8,21 +8,26 @@ body {
 }
 
 /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 8px;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
     background: white;
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
     background: #e6e6e6;
-}
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
     background: #e6e6e6;
-}
+} */
+
+
+/* @media only screen and (min-width: 900px){
+  body{overflow-y: hidden;}
+} */

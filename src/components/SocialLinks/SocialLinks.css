@@ -1,0 +1,17 @@
+.social-links{
+  position: absolute;
+  top: 0;
+  right: 8px;
+  margin:0;
+}
+
+.social-links a{opacity: 0.6; cursor: pointer;}
+.social-links a:hover{opacity: 1;}
+
+.social-links li{display: inline-block; list-style: none; margin: 16px 8px; vertical-align: middle;}
+.social-links a{text-transform: uppercase; font-weight: bold;}
+.social-links img{width: 24px; height: 24px;}
+
+.social-links a.red{color: #E65151;}
+.social-links a.blue{color: #347EAC;}
+.social-links a.yellow{color: #C9C955;}
