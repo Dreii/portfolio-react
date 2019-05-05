@@ -1,32 +1,69 @@
 export default function Step(){
-  const canvasWidth = this.refs.canvas.width,
-        canvasHeight = this.refs.canvas.height
+  let leftCanvasWidth = this.state.leftCanvasWidth,
+      rightCanvasWidth = this.state.rightCanvasWidth,
+      canvasHeight = this.state.canvasHeight
 
-  StepClouds.call(this, canvasWidth, canvasHeight)
-  StepFish.call(this, canvasWidth, canvasHeight)
-  StepBubbles.call(this, canvasWidth, canvasHeight)
+
+  if(this.props.mode === "HOME" || this.props.mode === "WORK"){
+    StepClouds.call(this, leftCanvasWidth, canvasHeight)
+    StepBirds.call(this, leftCanvasWidth, canvasHeight)
+  }
+
+  if(this.props.mode === "HOME" || this.props.mode === "SKILLS"){
+    StepFish.call(this, rightCanvasWidth, canvasHeight)
+    StepBubbles.call(this, canvasHeight)
+    StepGodRays.call(this)
+  }
 }
 
-export function StepClouds(canvasWidth, canvasHeight){
-  this.clouds.forEach(cloudObj => {
-    cloudObj.x += cloudObj.direction ? -cloudObj.speed : cloudObj.speed
-    if(cloudObj.x > canvasWidth/2) cloudObj.x = -cloudObj.size
-    if(cloudObj.x < -cloudObj.size) cloudObj.x = canvasWidth/2
+function StepClouds(leftCanvasWidth, canvasHeight){
+  this.clouds.forEach(cloud => {
+    cloud.x += cloud.direction ? -cloud.speed : cloud.speed
+    if(cloud.x > leftCanvasWidth) cloud.x = -cloud.size
+    if(cloud.x < -cloud.size) cloud.x = leftCanvasWidth
   })
 }
 
-export function StepFish(canvasWidth, canvasHeight){
-  this.school.forEach(fishObj => {
-    fishObj.x += fishObj.far ? -fishObj.speed : fishObj.speed
-    if(fishObj.x > canvasWidth && !fishObj.far) fishObj.x = canvasWidth/2-fishObj.size
-    if(fishObj.x < canvasWidth/2-fishObj.size  && fishObj.far) fishObj.x = canvasWidth+fishObj.size
+function StepBirds(leftCanvasWidth, canvasHeight){
+  this.birds.forEach(bird => {
+    bird.x += bird.direction ? -bird.speed : bird.speed
+    if(bird.x > leftCanvasWidth) bird.x = -bird.size
+
+    bird.animStep++
+
+    switch(bird.animStep){
+      case 3: bird.animState = 0; break;
+      case 6: bird.animState = 1; break;
+      case 9: bird.animState = 2; break;
+      case 12: bird.animState = 3; break;
+      case 15: bird.animState = 4; break;
+      case 18: bird.animState = 5; break;
+      case 21: bird.animState = 6; break;
+      case 24: bird.animState = 7; break;
+      case 27: bird.animState = 8; bird.animStep = 0; bird.y++; break;
+    }
   })
 }
 
-export function StepBubbles(canvasWidth, canvasHeight){
+function StepFish(rightCanvasWidth, canvasHeight){
+  this.school.forEach(fish => {
+    fish.x += fish.far ? -fish.speed : fish.speed
+    if(fish.x > rightCanvasWidth && !fish.far) fish.x = -fish.size
+    if(fish.x < -fish.size  && fish.far) fish.x = rightCanvasWidth+fish.size
+  })
+}
+
+function StepBubbles(canvasHeight){
   this.bubbles.forEach(bubble => {
     bubble.x += Math.sin(0.25*bubble.y)/5
     bubble.y-=bubble.speed
-    if(bubble.y < -bubble.size) bubble.y += this.refs.canvas.height+bubble.size
+    if(bubble.y < -bubble.size) bubble.y += canvasHeight+bubble.size
   })
+}
+
+function StepGodRays(){
+  this.godraysTime++
+  this.godrays[0].x4Modified = this.godrays[0].x4+(Math.sin(0.01*this.godraysTime)*32)
+  this.godrays[1].x4Modified = this.godrays[1].x4+(Math.sin(0.005*this.godraysTime)*32)
+
 }

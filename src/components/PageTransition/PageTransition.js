@@ -13,8 +13,8 @@ class PageTransition extends Component {
     let {blobs} = this.state
     let {startX, startY} = this.props
 
-    for(let i = 0; i< 20; i++){blobs.push(getBlobProps('small', startX, startY))}
-    for(let i = 0; i< 20; i++){blobs.push(getBlobProps('large', startX, startY))}
+    for(let i = 0; i< 10; i++){blobs.push(getBlobProps('small', startX, startY))}
+    for(let i = 0; i< 10; i++){blobs.push(getBlobProps('large', startX, startY))}
     let superBlob = getBlobProps('super', startX, startY)
     this.setState({blobs, superBlob})
   }

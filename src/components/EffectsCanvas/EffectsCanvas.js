@@ -3,12 +3,14 @@ import './EffectsCanvas.css'
 
 import Create from './Create'
 import Step from './Step'
-import Draw from './Draw'
+import DrawLeft from './DrawLeft'
+import DrawRight from './DrawRight'
 
 class EffectsCanvas extends Component {
   state={
-    mountains: null,
-    undersea: null,
+    leftCanvasWidth: 0,
+    rightCanvasWidth: 0,
+    canvasHeight: 0,
     fish: null,
     fishClose: null,
     cloud0: null,
@@ -17,52 +19,84 @@ class EffectsCanvas extends Component {
     cloud3: null,
     cloud4: null,
     cloud5: null,
-    cloud6: null
+    cloud6: null,
+    bird0:  null,
+    bird1:  null,
+    bird2:  null,
+    bird3:  null,
+    bird4:  null,
+    bird5:  null,
+    bird6:  null,
+    bird7:  null,
+    bird8:  null,
   }
 
-  constructor(props) {
-      super(props);
+  Resize = () => {
+    let lw, rw
+    switch(this.props.mode){
+      case "HOME":
+        lw = window.innerWidth/2
+        rw = window.innerWidth/2
+      break;
 
-      this._resizeHandler = () => {
-          /* Allows CSS to determine size of canvas */
-          this.refs.canvas.width = window.innerWidth;
-          this.refs.canvas.height = window.innerHeight;
-      }
+      case "WORK":
+        lw = window.innerWidth
+        rw = 0
+      break;
+
+      case "SKILLS":
+        lw = 0
+        rw = window.innerWidth
+      break;
+    }
+
+    this.setState({leftCanvasWidth: lw, rightCanvasWidth: rw, canvasHeight: window.innerHeight})
+    this.refs.leftCanvas.width = lw
+    this.refs.rightCanvas.width = rw
+    this.refs.leftCanvas.height = window.innerHeight
+    this.refs.rightCanvas.height = window.innerHeight
+    Create.call(this, lw, rw, window.innerHeight)
+  }
+
+  Loop(){
+    Step.call(this)
+    DrawLeft.call(this)
+    DrawRight.call(this)
   }
 
   init() {
-    this.time = 0
+    this.Resize()
 
-    Create.apply(this)
-
-    //Begin Step Loop
-    setInterval(Step.bind(this), 1000/30)
-
-    //Begin Draw Loop
-    setInterval(Draw.bind(this), 1000/60)
+    this.loop = setInterval(this.Loop.bind(this), 1000/30)
   }
 
   componentDidMount() {
-      window.addEventListener('resize', this._resizeHandler)
+    window.addEventListener('resize', this.Resize)
 
-      /* Allows CSS to determine size of canvas */
-      this.refs.canvas.width = window.innerWidth;
-      this.refs.canvas.height = window.innerHeight;
+    const leftCanvas = this.refs.leftCanvas
+    const rightCanvas = this.refs.rightCanvas
+    this.lctx = leftCanvas.getContext("2d")
+    this.rctx = rightCanvas.getContext("2d")
 
-      const canvas = this.refs.canvas
-      this.ctx = canvas.getContext("2d")
-      this.init()
+    this.init()
   }
 
-  componentWillUnmount() {window.removeEventListener('resize', this._resizeHandler)}
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.Resize)
+    clearInterval(this.Loop)
+  }
 
   render() {
-
       return (
         <div>
-          <canvas id="effects-canvas" ref="canvas" width={640} height={425} />
-          <img ref="mountains" src={"/mountains.svg"} className="hidden" />
-          <img ref="undersea" src={"/undersea.svg"} className="hidden" />
+          <canvas id="left-canvas" ref="leftCanvas" />
+          <canvas id="right-canvas" ref="rightCanvas" />
+          <div className="background-left" style={{width: this.state.leftCanvasWidth}}>
+            <div className="background-image"></div>
+          </div>
+          <div className="background-right" style={{width: this.state.rightCanvasWidth}}>
+            <div className="background-image"></div>
+          </div>
           <img ref="fish" src={"/fish.svg"} className="hidden" />
           <img ref="fishClose" src={"/fish-close.svg"} className="hidden" />
           <img ref="cloud0" src={"/cloud-0.svg"} className="hidden" />
@@ -72,8 +106,17 @@ class EffectsCanvas extends Component {
           <img ref="cloud4" src={"/cloud-4.svg"} className="hidden" />
           <img ref="cloud5" src={"/cloud-5.svg"} className="hidden" />
           <img ref="cloud6" src={"/cloud-6.svg"} className="hidden" />
+          <img ref="bird0" src={"/bird-0.svg"} className="hidden" />
+          <img ref="bird1" src={"/bird-1.svg"} className="hidden" />
+          <img ref="bird2" src={"/bird-2.svg"} className="hidden" />
+          <img ref="bird3" src={"/bird-3.svg"} className="hidden" />
+          <img ref="bird4" src={"/bird-4.svg"} className="hidden" />
+          <img ref="bird5" src={"/bird-5.svg"} className="hidden" />
+          <img ref="bird6" src={"/bird-6.svg"} className="hidden" />
+          <img ref="bird7" src={"/bird-7.svg"} className="hidden" />
+          <img ref="bird8" src={"/bird-8.svg"} className="hidden" />
         </div>
-      );
+      )
   }
 }
 

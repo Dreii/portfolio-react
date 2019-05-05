@@ -8,6 +8,9 @@ import Contact from '../../components/Contact/Contact'
 import SkillEntry from '../../components/SkillEntry/SkillEntry'
 import Work from '../Work/Work'
 
+import EffectsCanvas from '../../components/EffectsCanvas/EffectsCanvas'
+
+
 class Bio extends Component {
 
   state={
@@ -37,7 +40,8 @@ class Bio extends Component {
               <div className="bio-text-container">
                 <h2 className="bio-title">Build Beautiful Things.</h2>
                 <p className="bio-text">
-                  My goal is to spend as much of my life as I can building beautiful things. I’ve focused that goal into the art of software development and design. I strive to make software that is beautiful inside and out.
+                  <b>I want to spend of my life building beautiful things.</b>
+                  I’ve focused that goal into the art of making software that is beautiful inside and out.
                 </p>
               </div>
             </div>
@@ -45,41 +49,58 @@ class Bio extends Component {
             <div className="skills-container">
               <SkillEntry
                 title="Design"
-                subtitle="Lorem ipsum ismet dolor"
+                // subtitle="The best laid plans."
+                // subtitleSize={"5.4vw"}
+                subtitle="Make it simple, but significant"
+                subtitleSize={"3.37vw"}
                 color="#B85EAC"
                 darkColor="#813176"
                 icon="/design-icon.svg"
+                languageList={["Illustrator", "Photoshop", "XD", "Premiere"]}
                 active={this.state.skill === "design"}
                 onClick={()=>this.EnterSkill("design")}
                 goBack={()=>this.ExitSkill()}
               >
-                Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                In my 10 years of production experience I've found that a solid design phase is vital to a beautiful project.
+                This is why I plan out most or all of an application, before I touch a single line of code.
+                <br/><br/>
+                The design process is fluid however, and I often test and modify designs as the project is developed and opportunities to change function or form arise.
               </SkillEntry>
 
               <SkillEntry
                 title="Client"
-                subtitle="Lorem ipsum ismet dolor"
+                subtitle="A thing of beauty is a joy forever"
+                subtitleSize="3.29vw"
                 color="#76C9AF"
                 darkColor="#3E9076"
                 icon="/client-icon.svg"
+                languageList={["React", "jQuery", "Sass"]}
                 active={this.state.skill === "client"}
                 onClick={()=>this.EnterSkill("client")}
                 goBack={()=>this.ExitSkill()}
               >
-                Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                Working on the front end is my favorite part of software development.
+                <br/><br/>
+                I love to grow and shape an application from its barebones version all the way into a fully fleshed piece, seeing the progress each time I hit save.
+                I spend the most of my time in the front end development phase, and usually work with mock data to save worrying about the underlying pipework for later.
               </SkillEntry>
 
               <SkillEntry
                 title="Server"
-                subtitle="Lorem ipsum ismet dolor"
+                subtitle="Structure is requred for creativity"
+                subtitleSize="3.15vw"
                 color="#F2C85A"
                 darkColor="#A88320"
                 icon="/server-icon.svg"
+                languageList={["Node.js", "Socket.io", "SQLite", "Mongo DB", "PHP"]}
                 active={this.state.skill === "server"}
                 onClick={()=>this.EnterSkill("server")}
                 goBack={()=>this.ExitSkill()}
               >
-                Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                Back end code is where form meets the function.
+                <br/><br/>
+                I like to think of server code as a series of pipes pumping data to the user through the client layer.
+                Once I have figured out all of the data I will need and where it will go, I get to work on the real engine behind the magic.
               </SkillEntry>
             </div>
           </div>
@@ -88,7 +109,8 @@ class Bio extends Component {
           <Button value="View My Work" color="white" style={{position: "fixed", bottom: 16, right: 16}} onClick={()=>ChangePage(<Work ChangePage={ChangePage} EnterFullScreen={this.props.EnterFullScreen}/>, "#E65151")}/>
         </div>
 
-        <div className="background"></div>
+        {/* <div className="background"></div> */}
+        <EffectsCanvas mode="SKILLS"/>
       </div>
     )
   }

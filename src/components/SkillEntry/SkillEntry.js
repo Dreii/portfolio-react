@@ -3,7 +3,7 @@ import React from 'react'
 import './SkillEntry.css'
 import Button from '../Button/Button'
 
-const SkillEntry = ({title, subtitle, color, darkColor, icon, active, children, onClick, goBack}) => (
+const SkillEntry = ({title, subtitle, subtitleSize, color, darkColor, icon, active, children, languageList, onClick, goBack}) => (
   <div
     className={`skill-entry ${active ? "active": ""}`}
     style={{background: color, color: darkColor}}
@@ -12,8 +12,13 @@ const SkillEntry = ({title, subtitle, color, darkColor, icon, active, children, 
     <div className="skill-inner">
       <h1 className="title">{title}</h1>
       <p className="title-background">{title.charAt(0)}</p>
-      <p className="subtitle">{subtitle}</p>
-      <p className="skill-body">{children}</p>
+      <p className="subtitle" style={{fontSize: subtitleSize || "inherit"}}>{subtitle}</p>
+      <div className="skill-body">
+        <p>{children}</p>
+        <ul className="language-list">
+          {languageList.map((language, i) => <li key={i}>{language}</li>)}
+        </ul>
+      </div>
       <div className="button-container">
         <Button value="Back to Skills" color="white" onClick={()=>goBack()}/>
       </div>

@@ -40,7 +40,7 @@ class Home extends Component {
           </div>
           {/* <div className="background hover"></div> */}
         </div>
-        <EffectsCanvas />
+        <EffectsCanvas mode="HOME"/>
       </div>
     )
   }

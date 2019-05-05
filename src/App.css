@@ -5,7 +5,7 @@
 }
 
 #container{
-  background: #E65151;
+  /* background: #E65151; */
 }
 
 .site-subtitle{
@@ -28,6 +28,6 @@
     bottom: 0;
     right: 0;
     /* overflow: hidden; */
-    background: #E65151;
+    /* background: #E65151; */
   }
 }

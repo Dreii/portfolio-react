@@ -57,6 +57,8 @@
   max-height: 56px;
   overflow-y: hidden;
   margin-top: 8px;
+  text-align: left;
+  margin-bottom: 4px;
 }
 
 .work-entry .work-button{
@@ -68,7 +70,12 @@
   color: #FF7373;
   border-radius: 32px;
   margin: 4px auto;
+  outline: none;
+  text-decoration: none;
 }
+
+.work-entry .work-button:hover{color: white; background: #FF7373; cursor: pointer;}
+.work-entry .work-button:active{outline: none;}
 
 .work-entry-container:nth-of-type(odd) .image-container{margin-left: 0; margin-right: 20%;}
 .work-entry-container:nth-of-type(odd) .text-container{margin-left: 40%; margin-right: 0;}

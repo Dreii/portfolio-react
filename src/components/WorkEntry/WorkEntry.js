@@ -2,7 +2,7 @@ import React from 'react'
 
 import './WorkEntry.css'
 
-const WorkEntry = ({image, name, tags, message}) => (
+const WorkEntry = ({image, name, tags, message, view}) => (
   <div className="work-entry-container">
     <div className="work-entry">
       <div className="image-container">
@@ -16,7 +16,7 @@ const WorkEntry = ({image, name, tags, message}) => (
           ))}
         </div>
         <p className="work-text">{message}</p>
-        <button className="work-button">View</button>
+        <a className="work-button" href={view} target="_blank">View</a>
       </div>
     </div>
   </div>

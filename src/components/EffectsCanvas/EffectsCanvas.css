@@ -1,9 +1,44 @@
-#effects-canvas{
-  width: 100%;
-  height: 100%;
-  position: absolute;
+#left-canvas, #right-canvas{
+  position: fixed;
   top: 0;
-  left: 0;
+  /* left: 0; */
+  /* z-index: 1000; */
 }
 
+#right-canvas{right: 0;}
+
 .hidden{display: none;}
+
+.background-left{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 50%;
+  height: 100vh;
+  background-color: #FF7373;
+  z-index: -1;
+}
+
+.background-left .background-image{background-image: url("/mountains.svg")}
+
+.background-image{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  margin-top: 128px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.background-right{
+  position: fixed;
+  top:0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(at top right, #0B87A9, #274A92);
+  z-index: -1;
+}
+
+.background-right .background-image{background-image: url("/undersea.svg")}
