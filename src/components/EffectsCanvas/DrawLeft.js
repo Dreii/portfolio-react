@@ -1,6 +1,5 @@
-export default function Draw(){
-  let canvasWidth = this.state.leftCanvasWidth,
-      canvasHeight = this.state.canvasHeight
+export default function Draw(canvasWidth, canvasHeight){
+  if(this.props.mode === "SKILLS") return;
 
   //Clear the canvas
   this.lctx.clearRect(0, 0, canvasWidth, canvasHeight)

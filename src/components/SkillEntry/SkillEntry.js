@@ -3,7 +3,7 @@ import React from 'react'
 import './SkillEntry.css'
 import Button from '../Button/Button'
 
-const SkillEntry = ({title, subtitle, subtitleSize, color, darkColor, icon, active, children, languageList, onClick, goBack}) => (
+const SkillEntry = ({title, subtitle, subtitleSize, subtitleSizeMobile, color, darkColor, icon, active, children, languageList, onClick, goBack}) => (
   <div
     className={`skill-entry ${active ? "active": ""}`}
     style={{background: color, color: darkColor}}
@@ -12,7 +12,7 @@ const SkillEntry = ({title, subtitle, subtitleSize, color, darkColor, icon, acti
     <div className="skill-inner">
       <h1 className="title">{title}</h1>
       <p className="title-background">{title.charAt(0)}</p>
-      <p className="subtitle" style={{fontSize: subtitleSize || "inherit"}}>{subtitle}</p>
+      <p className="subtitle" style={{fontSize: window.innerWidth > 900 ? subtitleSize:subtitleSizeMobile}}>{subtitle}</p>
       <div className="skill-body">
         <p>{children}</p>
         <ul className="language-list">

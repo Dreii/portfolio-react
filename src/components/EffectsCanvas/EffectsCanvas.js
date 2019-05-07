@@ -32,36 +32,26 @@ class EffectsCanvas extends Component {
   }
 
   Resize = () => {
-    let lw, rw
-    switch(this.props.mode){
-      case "HOME":
-        lw = window.innerWidth/2
-        rw = window.innerWidth/2
-      break;
-
-      case "WORK":
-        lw = window.innerWidth
-        rw = 0
-      break;
-
-      case "SKILLS":
-        lw = 0
-        rw = window.innerWidth
-      break;
-    }
-
-    this.setState({leftCanvasWidth: lw, rightCanvasWidth: rw, canvasHeight: window.innerHeight})
-    this.refs.leftCanvas.width = lw
-    this.refs.rightCanvas.width = rw
-    this.refs.leftCanvas.height = window.innerHeight
-    this.refs.rightCanvas.height = window.innerHeight
+    let {lw, rw, hh} = GetBounds.call(this)
     Create.call(this, lw, rw, window.innerHeight)
   }
 
   Loop(){
-    Step.call(this)
-    DrawLeft.call(this)
-    DrawRight.call(this)
+    let {lw, rw, hh} = GetBounds.call(this)
+
+    if(this.refs.leftCanvas){
+      this.refs.leftCanvas.width = lw
+      this.refs.leftCanvas.height = hh
+    }
+
+    if(this.refs.rightCanvas){
+      this.refs.rightCanvas.width = rw
+      this.refs.rightCanvas.height = hh
+    }
+
+    Step.call(this, lw, rw, hh)
+    DrawLeft.call(this, lw, hh)
+    DrawRight.call(this, rw, hh)
   }
 
   init() {
@@ -75,8 +65,12 @@ class EffectsCanvas extends Component {
 
     const leftCanvas = this.refs.leftCanvas
     const rightCanvas = this.refs.rightCanvas
-    this.lctx = leftCanvas.getContext("2d")
-    this.rctx = rightCanvas.getContext("2d")
+
+    if(this.props.mode !== "SKILLS")
+      this.lctx = leftCanvas.getContext("2d")
+
+    if(this.props.mode !== "WORK")
+      this.rctx = rightCanvas.getContext("2d")
 
     this.init()
   }
@@ -88,15 +82,17 @@ class EffectsCanvas extends Component {
 
   render() {
       return (
-        <div>
-          <canvas id="left-canvas" ref="leftCanvas" />
-          <canvas id="right-canvas" ref="rightCanvas" />
-          <div className="background-left" style={{width: this.state.leftCanvasWidth}}>
+        <div id="effects-canvas">
+          <div className={`left-effects ${this.props.mode === "WORK" ? 'effect-page': this.props.mode === "SKILLS" ? "hidden": ""}`}>
+            <canvas id="left-canvas" className="effect-canvas" ref="leftCanvas" />
             <div className="background-image"></div>
           </div>
-          <div className="background-right" style={{width: this.state.rightCanvasWidth}}>
+
+          <div className={`right-effects ${this.props.mode === "SKILLS" ? 'effect-page': this.props.mode === "WORK" ? "hidden": ""}`}>
+            <canvas id="right-canvas" className="effect-canvas" ref="rightCanvas" />
             <div className="background-image"></div>
           </div>
+
           <img ref="fish" src={"/fish.svg"} className="hidden" />
           <img ref="fishClose" src={"/fish-close.svg"} className="hidden" />
           <img ref="cloud0" src={"/cloud-0.svg"} className="hidden" />
@@ -121,3 +117,31 @@ class EffectsCanvas extends Component {
 }
 
 export default EffectsCanvas
+
+function GetBounds(){
+  let lw, rw, hh
+  switch(this.props.mode){
+    case "HOME":
+      if(window.innerWidth < 900){
+        lw = window.innerWidth
+        rw = window.innerWidth
+      }else{
+        lw = window.innerWidth/2
+        rw = window.innerWidth/2
+      }
+    break;
+
+    case "WORK":
+      lw = window.innerWidth
+      rw = 0
+    break;
+
+    case "SKILLS":
+      lw = 0
+      rw = window.innerWidth
+    break;
+  }
+  hh = window.innerHeight
+
+  return {lw, rw, hh}
+}

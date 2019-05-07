@@ -1,4 +1,4 @@
-.work-entry-container:first-of-type{margin-top: 112px;}
+.work-entry-container:first-of-type{margin-top: 186px;}
 
 .work-entry-container{
   width: 100%;
@@ -16,7 +16,7 @@
   width: 70%;
   padding-bottom: 70%;
   position: relative;
-  height: 0;
+  /* height: 0; */
 }
 
 .image{
@@ -25,6 +25,9 @@
   position: absolute;
   left: 0;
   border-radius: 14px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .work-entry .work-title{
@@ -40,10 +43,9 @@
 }
 .work-entry .text-container{
   position: relative;
-  top: -96px;
+  top: -46px;
 
-  width: 50%;
-  height: 150px;
+  width: 80%;
   background: white;
   border-radius: 16px;
   clear: both;
@@ -54,11 +56,10 @@
 }
 
 .work-entry .work-text{
-  max-height: 56px;
   overflow-y: hidden;
   margin-top: 8px;
   text-align: left;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .work-entry .work-button{
@@ -78,28 +79,32 @@
 .work-entry .work-button:active{outline: none;}
 
 .work-entry-container:nth-of-type(odd) .image-container{margin-left: 0; margin-right: 20%;}
-.work-entry-container:nth-of-type(odd) .text-container{margin-left: 40%; margin-right: 0;}
+.work-entry-container:nth-of-type(odd) .text-container{margin-left: 20%; margin-right: 0;}
 
 .work-entry-container:nth-of-type(even) .image-container{margin-left: 20%; margin-right: 0;}
-.work-entry-container:nth-of-type(even) .text-container{margin-left: 0; margin-right: 40%;}
+.work-entry-container:nth-of-type(even) .text-container{margin-left: 0; margin-right: 20%;}
 
 
 @media only screen and (min-width: 768px){
+  .work-entry-container:first-of-type{margin-top: 128px;}
+
   .work-entry .image-container{
     width: 80%;
     padding-bottom: 80%;
   }
 
+  .work-entry .text-container{width: 70%;}
+
+  .work-entry-container{padding: 0 30%;}
+
   .work-entry .text-container{
-    width: 70%;
-    height: 150px;
+    top: -96px;
+    width: 50%;
   }
 
-  .work-entry-container{
-    padding: 0 30%;
-  }
+  .work-entry-container:nth-of-type(odd) .image-container{margin-left: 0; margin-right: 20%;}
+  .work-entry-container:nth-of-type(odd) .text-container{margin-left: 40%; margin-right: 0;}
 
-  .work-entry .work-text{
-    max-height: 56px;
-  }
+  .work-entry-container:nth-of-type(even) .image-container{margin-left: 20%; margin-right: 0;}
+  .work-entry-container:nth-of-type(even) .text-container{margin-left: 0; margin-right: 40%;}
 }

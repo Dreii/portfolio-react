@@ -64,7 +64,9 @@
 .half:hover .background.hover{opacity: 1;}
 
 @media only screen and (min-width: 900px){
-  .home{position: absolute; height:100%;}
-  .work, .bio{position: absolute; width: 50vw;}
-  .bio{left: 50vw;}
+  /* .home{position: absolute; height:100%;} */
+  /* .work, .bio{position: absolute; width: 50vw;}
+  .bio{left: 50vw;} */
+  .half{position: absolute; width: 50vw; height: 100vh;}
+  .half:nth-last-of-type(even){left: 50vw;}
 }

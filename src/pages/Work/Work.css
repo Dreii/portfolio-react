@@ -1,17 +1,13 @@
-.work.page .background{
-  /* background-size: cover; */
-}
-
 .work-list{
   flex: 0 0 100%;
   overflow-y: scroll;
   height: 100%;
   padding-top: 100%;
+  opacity: 0;
   animation: work-list-slide-in 800ms ease-out 2000ms;
   animation-fill-mode: forwards;
 }
 
-
 @keyframes work-list-slide-in{
-  100%{padding-top: 0;}
+  100%{padding-top: 0; opacity: 1;}
 }

@@ -8,9 +8,10 @@
 
 .bio.page .body{
   text-align: center;
-  padding-top: 25vh;
+  padding-top: 112px;
   min-height: 100vh;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .bio-title{
@@ -50,4 +51,8 @@
 
   justify-content: space-between;
   padding: 0 20%;
+}
+
+@media only screen and (min-width: 900px){
+  .bio.page .body{padding-top: 25vh;}
 }

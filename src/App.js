@@ -5,6 +5,7 @@ import Logo from './components/Logo/Logo'
 import LoadingBar from './components/LoadingBar/LoadingBar'
 import PageTransition from './components/PageTransition/PageTransition'
 import EffectsCanvas from './components/EffectsCanvas/EffectsCanvas'
+import Helmet from 'react-helmet';
 
 import Home from './pages/Home/Home'
 
@@ -55,6 +56,7 @@ class App extends Component {
     let loading = this.state.loading
     return (
       <div id="container" style={{overflowY:this.state.fullScreen ? "hidden": "auto"}} ref={this.containerRef}>
+        <Helmet title="Sean Verhaagen Full Stack Javascript Developer In Austin"/>
         <Logo logo={logo} x={loading ? window.innerWidth/2:48} y={loading ? (window.innerHeight/2)-128:48} ChangePage={(page, color)=>this.ChangePage(page, color)} EnterFullScreen={(fsState)=>this.setState({fullScreen: fsState})}/>
         <PageTransition
           color={this.state.transitionColor}

@@ -1,8 +1,4 @@
-export default function Step(){
-  let leftCanvasWidth = this.state.leftCanvasWidth,
-      rightCanvasWidth = this.state.rightCanvasWidth,
-      canvasHeight = this.state.canvasHeight
-
+export default function Step(leftCanvasWidth, rightCanvasWidth, canvasHeight){
 
   if(this.props.mode === "HOME" || this.props.mode === "WORK"){
     StepClouds.call(this, leftCanvasWidth, canvasHeight)

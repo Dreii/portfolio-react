@@ -1,6 +1,6 @@
 .contact{
   text-align: center;
-  margin: 32px auto 64px auto;
+  margin: 25vh auto 64px auto;
 }
 
 .contact-icon{fill: white;}
@@ -35,7 +35,7 @@
 .contact li{
   display: inline-block;
   position: relative;
-  margin-right: 32px;
+  margin: 0 16px;
 }
 .contact li:after{
   content: '';

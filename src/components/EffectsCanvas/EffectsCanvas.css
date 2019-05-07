@@ -1,44 +1,77 @@
-#left-canvas, #right-canvas{
-  position: fixed;
+#effects-canvas{
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
   top: 0;
-  /* left: 0; */
-  /* z-index: 1000; */
 }
 
-#right-canvas{right: 0;}
+.left-effects, .right-effects{
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+}
+
+#left-canvas, #right-canvas{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.left-effects{
+  background-color: #FF7373;
+}
+.right-effects{
+  top: 100vh;
+  right: 0;
+  background: radial-gradient(at top right, #0B87A9, #274A92);
+}
+
+.left-effects.effect-page, .right-effects.effect-page{
+  width: 100vw;
+  top: 0;
+  position: fixed;
+}
 
 .hidden{display: none;}
-
-.background-left{
-  position: fixed;
-  top:0;
-  left:0;
-  width: 50%;
-  height: 100vh;
-  background-color: #FF7373;
-  z-index: -1;
-}
-
-.background-left .background-image{background-image: url("/mountains.svg")}
 
 .background-image{
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  top: 0;
   background-size: cover;
-  margin-top: 128px;
+  margin-top: 0;
   background-repeat: no-repeat;
   background-position: top center;
-}
-
-.background-right{
-  position: fixed;
-  top:0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: radial-gradient(at top right, #0B87A9, #274A92);
   z-index: -1;
 }
 
-.background-right .background-image{background-image: url("/undersea.svg")}
+.left-effects .background-image{background-image: url("/mountains.svg")}
+.right-effects .background-image{background-image: url("/undersea.svg")}
+
+@media only screen and (min-width: 900px){
+  .left-effects, .right-effects{width: 50vw; top: 0;}
+}
+
+
+
+/* .background-left{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF7373;
+  z-index: -1;
+}
+
+.background-right{
+  position: absolute;
+  height:100%;
+  right: 0;
+  width: 100%;
+  background: radial-gradient(at top right, #0B87A9, #274A92);
+  z-index: -1;
+} */
