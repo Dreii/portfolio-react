@@ -2,7 +2,7 @@ import React from 'react'
 
 import './LoadingBar.css'
 
-const LoadingBar = ({color, x, y, done}) => {
+const LoadingBar = ({color, y, done}) => {
   return(
     <div className="loading-bar-container" style={{top: y}}>
       <div className="loading-bar-inner">

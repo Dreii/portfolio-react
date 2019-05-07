@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div id="container" style={{overflowY:this.state.fullScreen ? "hidden": "auto"}} ref={this.containerRef}>
         <Helmet title="Sean Verhaagen Full Stack Javascript Developer In Austin"/>
-        <Logo logo={logo} x={loading ? window.innerWidth/2:48} y={loading ? (window.innerHeight/2)-128:48} ChangePage={(page, color)=>this.ChangePage(page, color)} EnterFullScreen={(fsState)=>this.setState({fullScreen: fsState})}/>
+        <Logo logo={logo} className={loading ? "center":""} ChangePage={(page, color)=>this.ChangePage(page, color)} EnterFullScreen={(fsState)=>this.setState({fullScreen: fsState})}/>
         <PageTransition
           color={this.state.transitionColor}
           stage={this.state.transitionStage}
@@ -66,7 +66,7 @@ class App extends Component {
         />
 
         {this.state.page === null ? (
-          <LoadingBar color={"white"} x={window.innerWidth/2} y={loading ? window.innerHeight/2-64 : window.innerHeight*2}/>
+          <LoadingBar color={"white"} y={loading ? window.innerHeight/2-64 : window.innerHeight*2}/>
         ):(
           this.state.page
         )}

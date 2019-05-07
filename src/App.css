@@ -2,10 +2,11 @@
   font-family: 'Open-Sans', sans-serif;
   padding: 0;
   margin: 0;
+  /* background: #E65151; */
 }
 
 #container{
-  /* background: #E65151; */
+  background: #E65151;
 }
 
 .site-subtitle{
@@ -28,6 +29,5 @@
     bottom: 0;
     right: 0;
     /* overflow: hidden; */
-    /* background: #E65151; */
   }
 }

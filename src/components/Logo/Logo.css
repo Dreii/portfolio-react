@@ -4,6 +4,14 @@
   animation-fill-mode: forwards;
   transition: top 0.6s ease-in, left 0.6s ease-in;
   z-index: 100;
+  left: 64px;
+  top: 64px;
+}
+
+#logo-container.center{
+  position: absolute;
+  left: 50%;
+  top: 30%;
 }
 
 #logo-inner-container{
