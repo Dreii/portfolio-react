@@ -4,17 +4,12 @@ import './App.css';
 import Logo from './components/Logo/Logo'
 import LoadingBar from './components/LoadingBar/LoadingBar'
 import PageTransition from './components/PageTransition/PageTransition'
-import EffectsCanvas from './components/EffectsCanvas/EffectsCanvas'
 import Helmet from 'react-helmet';
 
 import Home from './pages/Home/Home'
 
-
-import locations from './constants/locations'
-
-      //transition stages
+//transition stages
 const STAGING = 0, GROWING = 1, SPREADING = 2
-let transitionStage = STAGING
 class App extends Component {
   constructor(props){
     super(props)

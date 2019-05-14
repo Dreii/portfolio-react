@@ -37,6 +37,7 @@ function StepBirds(leftCanvasWidth, canvasHeight){
       case 21: bird.animState = 6; break;
       case 24: bird.animState = 7; break;
       case 27: bird.animState = 8; bird.animStep = 0; bird.y++; break;
+      default: 
     }
   })
 }

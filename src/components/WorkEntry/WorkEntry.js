@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import './WorkEntry.css'
 
 class WorkEntry extends Component {
-  state = {imageLoaded: false, img: new Image()}
+  state = {imageLoaded: false}
 
   componentDidMount(){
-    // const img = new Image();
-    this.state.img.src = this.props.image;
-    this.state.img.onload = () => {
+    const img = new Image();
+    img.src = this.props.image;
+    img.onload = () => {
       this.setState({imageLoaded: true})
     }
   }

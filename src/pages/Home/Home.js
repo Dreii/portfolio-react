@@ -5,16 +5,23 @@ import Work from '../Work/Work'
 import Bio from '../Bio/Bio'
 
 import Button from '../../components/Button/Button'
-import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import EffectsCanvas from '../../components/EffectsCanvas/EffectsCanvas'
 
 
 class Home extends Component {
+  state={wh: window.innerHeight}
+
+  componentDidMount(){window.addEventListener('resize', this._resizeHandler.bind(this))}
+  componentWillUnmount(){window.removeEventListener('resize', this._resizeHandler.bind(this))}
+
+  _resizeHandler(){
+    this.setState({wh: window.innerHeight})
+  }
 
   render() {
     return (
       <div className="home">
-        <div className="half work">
+        <div className="half work" style={{height: window.innerHeight}}>
           <div className="inner">
             <div className="work-info info">
               <h1>Hey I'm Sean.</h1>
@@ -27,7 +34,7 @@ class Home extends Component {
           </div>
           {/* <div className="background hover"></div> */}
         </div>
-        <div className="half bio">
+        <div className="half bio" style={{height: window.innerHeight}}>
           <div className="inner">
             <div className="bio-info info">
               <h1>Your next developer.</h1>

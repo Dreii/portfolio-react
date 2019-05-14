@@ -33,7 +33,7 @@ class EffectsCanvas extends Component {
 
   Resize = () => {
     let {lw, rw, hh} = GetBounds.call(this)
-    Create.call(this, lw, rw, window.innerHeight)
+    Create.call(this, lw, rw, hh)
   }
 
   Loop(){
@@ -93,24 +93,24 @@ class EffectsCanvas extends Component {
             <div className="background-image"></div>
           </div>
 
-          <img ref="fish" src={"/fish.svg"} className="hidden" />
-          <img ref="fishClose" src={"/fish-close.svg"} className="hidden" />
-          <img ref="cloud0" src={"/cloud-0.svg"} className="hidden" />
-          <img ref="cloud1" src={"/cloud-1.svg"} className="hidden" />
-          <img ref="cloud2" src={"/cloud-2.svg"} className="hidden" />
-          <img ref="cloud3" src={"/cloud-3.svg"} className="hidden" />
-          <img ref="cloud4" src={"/cloud-4.svg"} className="hidden" />
-          <img ref="cloud5" src={"/cloud-5.svg"} className="hidden" />
-          <img ref="cloud6" src={"/cloud-6.svg"} className="hidden" />
-          <img ref="bird0" src={"/bird-0.svg"} className="hidden" />
-          <img ref="bird1" src={"/bird-1.svg"} className="hidden" />
-          <img ref="bird2" src={"/bird-2.svg"} className="hidden" />
-          <img ref="bird3" src={"/bird-3.svg"} className="hidden" />
-          <img ref="bird4" src={"/bird-4.svg"} className="hidden" />
-          <img ref="bird5" src={"/bird-5.svg"} className="hidden" />
-          <img ref="bird6" src={"/bird-6.svg"} className="hidden" />
-          <img ref="bird7" src={"/bird-7.svg"} className="hidden" />
-          <img ref="bird8" src={"/bird-8.svg"} className="hidden" />
+          <img ref="fish" src={"/fish.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="fishClose" src={"/fish-close.svg"} className="hidden" aria-hidden="true" alt=""/>
+          <img ref="cloud0" src={"/cloud-0.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud1" src={"/cloud-1.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud2" src={"/cloud-2.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud3" src={"/cloud-3.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud4" src={"/cloud-4.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud5" src={"/cloud-5.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="cloud6" src={"/cloud-6.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird0" src={"/bird-0.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird1" src={"/bird-1.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird2" src={"/bird-2.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird3" src={"/bird-3.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird4" src={"/bird-4.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird5" src={"/bird-5.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird6" src={"/bird-6.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird7" src={"/bird-7.svg"} className="hidden" aria-hidden="true" alt="" />
+          <img ref="bird8" src={"/bird-8.svg"} className="hidden" aria-hidden="true" alt="" />
         </div>
       )
   }
@@ -140,6 +140,10 @@ function GetBounds(){
       lw = 0
       rw = window.innerWidth
     break;
+
+    default:
+      lw = window.innderWidth
+      rw = window.innerWidth
   }
   hh = window.innerHeight
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Bio.css'
 import '../Page.css'
 
-import Skills from '../../functions/Skills'
 import Button from '../../components/Button/Button'
 import Contact from '../../components/Contact/Contact'
 import SkillEntry from '../../components/SkillEntry/SkillEntry'

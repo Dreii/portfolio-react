@@ -64,11 +64,16 @@ export function PrepareGodRays(ww, canvasHeight){
 
   this.godrays[0] = {x1, x2, x3, x4, x5, y1, y2, y3, y4, y5}
 
-  x1 = startX+40, y1 = 0,
-  x2 = startX+48, y2 = 0,
-  x3 = startX+40-128, y3 = canvasHeight,
-  x4 = startX+40-128-32, y4 = canvasHeight,
-  x5 = startX+40, y5 = 0
+  x1 = startX+40
+  y1 = 0
+  x2 = startX+48
+  y2 = 0
+  x3 = startX+40-128
+  y3 = canvasHeight
+  x4 = startX+40-128-32
+  y4 = canvasHeight
+  x5 = startX+40
+  y5 = 0
 
   this.godrays[1] = {x1, x2, x3, x4, x5, y1, y2, y3, y4, y5}
 }

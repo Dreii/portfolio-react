@@ -3,7 +3,8 @@
   left:0;
   width: 100%;
   overflow: hidden;
-  min-height:100%;
+  /* position: absolute; */
+  height:100%;
 }
 
 .half{

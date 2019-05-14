@@ -3,7 +3,6 @@ import './Work.css'
 import '../Page.css'
 
 import Button from '../../components/Button/Button'
-import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import WorkEntry from '../../components/WorkEntry/WorkEntry'
 import Contact from '../../components/Contact/Contact'
 
