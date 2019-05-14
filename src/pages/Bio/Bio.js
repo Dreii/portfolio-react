@@ -49,11 +49,7 @@ class Bio extends Component {
             <div className="skills-container">
               <SkillEntry
                 title="Design"
-                // subtitle="The best laid plans."
-                // subtitleSize={"5.4vw"}
                 subtitle="Make it simple, but significant"
-                subtitleSize="3.37vw"
-                subtitleSizeMobile="3.37vw"
                 color="#B85EAC"
                 darkColor="#813176"
                 icon="/design-icon.svg"
@@ -71,8 +67,6 @@ class Bio extends Component {
               <SkillEntry
                 title="Client"
                 subtitle="A thing of beauty is a joy forever"
-                subtitleSize="3.29vw"
-                subtitleSizeMobile="3.37vw"
                 color="#76C9AF"
                 darkColor="#3E9076"
                 icon="/client-icon.svg"
@@ -90,8 +84,6 @@ class Bio extends Component {
               <SkillEntry
                 title="Server"
                 subtitle="Structure is requred for creativity"
-                subtitleSize="3.15vw"
-                subtitleSizeMobile="3.37vw"
                 color="#F2C85A"
                 darkColor="#A88320"
                 icon="/server-icon.svg"

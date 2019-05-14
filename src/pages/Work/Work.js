@@ -22,7 +22,7 @@ const Work = ({ChangePage, EnterFullScreen}) => (
       </div>
       <div className="work-list">
         {Projects.map((project, i)=>(
-          <WorkEntry name={project.name} image={project.image} view={project.view} message={project.message} tags={project.tags} key={i} />
+          <WorkEntry name={project.name} image={project.image} imageMin={project.imageMin} view={project.view} message={project.message} tags={project.tags} key={i} />
         ))}
         <Contact />
       </div>
