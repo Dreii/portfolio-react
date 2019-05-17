@@ -1,5 +1,12 @@
 const Projects = [
   {
+    name: "Workflow",
+    image: '/portfolio-images/workflow.png',
+    imageMin: '/portfolio-images/workflow-min.png',
+    tags: ['React.js', 'Redux', 'Node.js', 'Socket.io', 'Sass'],
+    view: "http://insurancefactors.com",
+    message: "Workflow is a private project currently in development to help creative studios manage clients. I helped engineer and build it from the ground up including a server for authentication as well as live colaboration using Socket.io."
+  },{
     name: "Insurance Factors",
     image: '/portfolio-images/ifi.png',
     imageMin: '/portfolio-images/ifi-min.png',

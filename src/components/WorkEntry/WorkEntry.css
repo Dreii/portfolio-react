@@ -25,12 +25,24 @@
   position: absolute;
   left: 0;
   border-radius: 14px;
-  background-size: cover;
-  background-position: top center;
+  background-size: 150%;
+  background-position-x: 50%;
+  background-position-y: 50%;
   background-repeat: no-repeat;
   background-color: white;
+
+  animation: move-image 20s ease-in-out infinite;
+  animation-play-state:paused;
 }
 
+.image-container:hover .image{animation-play-state: running;}
+
+@keyframes move-image{
+  0%{background-position-x: 50%; background-position-y: 50%;}
+  25%{background-position-x: 0%; background-position-y: 100%;}
+  75%{background-position-x: 100%; background-position-y: 0%;}
+  100%{background-position-x: 50%; background-position-y: 50%;}
+}
 .loader{
   top: 0;
   left: 0;
