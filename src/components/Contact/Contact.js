@@ -2,8 +2,11 @@ import React from 'react'
 
 import './Contact.css'
 
+
 const Contact = () => (
   <div className="contact">
+    <div className="contact-image"></div>
+
     <h1><a href="mailto:seanverhaagen@gmail.com" target="_blank" rel="noopener noreferrer" className="email-link">seanverhaagen@gmail.com</a></h1>
     <ul>
       <li><a href="https://www.github.com/dreii" target="_blank" rel="noopener noreferrer">

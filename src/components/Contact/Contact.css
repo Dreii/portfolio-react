@@ -3,12 +3,28 @@
   margin: 25vh auto 64px auto;
 }
 
+.contact-image{
+  width: 200px;
+  height: 200px;
+  margin: 16px auto;
+  border-radius: 100%;
+  border: 3px solid #FA6E6F;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  background-image: url('/bio-img.jpg'), url('/bio-img-min.jpg');
+  background-position: top center;
+  transform: rotate(360deg) scale(0);
+  animation: pop-in 0.3s ease-out 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pop-in{100%{transform: rotate(0deg) scale(1)}}
+
 .contact-icon{fill: white;}
 
 .contact h1{
   text-transform: uppercase;
   color: white;
-  font-size: 18px;
+  font-size: 28px;
   margin-bottom: 16px;
 }
 
@@ -23,8 +39,8 @@
 .contact ul{list-style: none;}
 
 .contact svg{
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
 }
 
 .work-page .contact a:hover .contact-icon{fill: #C62B2B;}
@@ -49,4 +65,35 @@
 }
 .contact li:last-of-type:after{
   display: none;
+}
+
+
+@media only screen and (max-width: 450px){
+  .contact-image{
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact h1{font-size: 18px;}
+
+  .contact svg{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .contact-image{
+    width: 128px;
+    height: 128px;
+  }
+
+  .contact h1{
+    font-size: 12px;
+  }
+
+  .contact svg{
+    width: 32px;
+    height: 32px;
+  }
 }

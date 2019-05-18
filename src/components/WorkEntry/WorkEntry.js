@@ -32,7 +32,7 @@ class WorkEntry extends Component {
               ))}
             </div>
             <p className="work-text">{message}</p>
-            <a className="work-button" href={view} target="_blank">View</a>
+            {view ? <a className="work-button" href={view} target="_blank">View</a>:null}
           </div>
         </div>
       </div>
