@@ -16,13 +16,13 @@ const Contact = () => (
         </svg>
       </a></li>
 
-      <li><a href="https://www.linkedin.com/dreii" target="_blank" rel="noopener noreferrer">
+      <li><a href="https://www.linkedin.com/in/sean-verhaagen-225777104/" target="_blank" rel="noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" width="89.337" height="89.336" viewBox="0 0 89.337 89.336">
           <path className="contact-icon" d="M44.668,7.445A37.224,37.224,0,1,1,7.445,44.668,37.266,37.266,0,0,1,44.668,7.445Zm0-7.445A44.668,44.668,0,1,0,89.337,44.668,44.67,44.67,0,0,0,44.668,0ZM37.224,29.779A3.722,3.722,0,1,1,33.5,26.027,3.735,3.735,0,0,1,37.224,29.779Zm0,7.445H29.779V59.558h7.445Zm11.167,0H40.946V59.558h7.445V48.908c0-6.41,7.452-7,7.452,0v10.65H63.28v-12.5c0-12.224-11.644-11.778-14.889-5.762V37.224Z"/>
         </svg>
       </a></li>
 
-      <li><a href="https://www.instagram.com/seanv" target="_blank" rel="noopener noreferrer">
+      <li><a href="https://www.instagram.com/data.by.dreii/" target="_blank" rel="noopener noreferrer">
         <svg id="instagram" xmlns="http://www.w3.org/2000/svg" width="84.655" height="84.655" viewBox="0 0 84.655 84.655">
           <g id="Group_269" data-name="Group 269">
             <g id="Group_268" data-name="Group 268">
